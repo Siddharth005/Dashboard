@@ -1,0 +1,31 @@
+<div>
+<div *ngIf="!ok" class="container-fluid" style="margin-top: 30px; max-width: 100%;">
+<table class="table table-striped" style="max-width: 100%;">
+   <thead class="table-dark">
+      <tr>
+         <th scope="col">Index</th>
+         <th scope="col">City</th>
+         <th scope="col">Category</th>
+         <th scope="col">Phone Number</th>
+         <th scope="col">Website</th>
+       </tr>
+   </thead>
+   <tbody>
+      <tr *ngFor="let resource of resources; let index = index">
+         <th>{{index+1}}</th>
+         <th>{{resource.city}}</th>
+         <th>{{resource.category}}</th>
+         <th>{{resource.phonenumber}}</th>
+         <th>To know more <a href="{{resource.contact}}">click here</a></th>
+
+      </tr>
+
+   </tbody>
+
+</table>
+</div>
+<div *ngIf="ok" class="container-fluid col-lg-12" style="margin-top: 30px; max-width: 100%; text-align: center;">
+   <span><i class="fa fa-exclamation-triangle fa-5x mb-2" aria-hidden="true"></i></span>
+ <div> <span style=" font-size: x-large;">{{errorcode}} {{message}}</span> </div>
+</div>
+</div>

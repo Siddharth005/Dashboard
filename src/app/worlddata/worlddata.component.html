@@ -1,0 +1,203 @@
+<div>
+<div *ngIf="!ok" class ="row">
+  <div class="row sticky container-fluid col-lg-5 ht">
+    <div class="col-xs-5 m-1 L">
+      <div class="Box" style="background-color: #87C5FC ;">
+        <div>
+          <span><i class="fa fa-certificate fa-3x mb-2" aria-hidden="true"></i></span>
+        </div>
+        <div>
+          <span style="color: #253646;">{{summary.confirmed}}</span>
+        </div>
+        <div>
+          <span class="mb-2" style="color: #253646; "><b>Total Cases</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-5 m-1 R"> 
+      <div class= "Box"  style="background-color: #D4D4D4 ;">
+        <div>
+          <span><i class="fa fa-exclamation-triangle fa-3x mb-2" aria-hidden="true"></i></span>
+        </div>
+        <div>
+          <span style="color: #253646; ">{{summary.dailyconfirmed}}</span>
+        </div>
+        <div>
+          <span class="mb-2" style="color: #253646; "><b>New Cases</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-5 m-1 L"> 
+      <div class="Box" style="background-color: #A9FD56 ;">
+        <div>
+          <span><i class="fa fa-heartbeat fa-3x mb-2" aria-hidden="true"></i></span>
+        </div>
+        <div>
+          <span style="color: #253646; ">{{summary.recovered}}</span>
+        </div>
+        <div>
+          <span class="mb-2" style="color: #253646; "><b>Recovered</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-5 m-1 R"> 
+      <div class="Box"  style="background-color: #FDFE85 ; ">
+        <div>
+          <span><i class="fa fa-bed fa-3x mb-2" aria-hidden="true"></i></span>
+        </div>
+        <div>
+          <span style="color: #253646;">{{summary.active}}</span>
+        </div>
+        <div>
+          <span class="mb-2" style="color: #253646; "><b>Active Cases</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-5 m-1 L"> 
+      <div class="Box"  style="background-color: #F88A7D ;">
+        <div>
+          <span><i class="fa fa-user-times fa-3x mb-2" aria-hidden="true"></i></span>
+        </div>
+        <div>
+          <span style="color: #253646;">{{summary.deaths}}</span>
+        </div>
+        <div>
+          <span class="mb-2" style="color: #253646; "><b>Total Deaths</b></span>
+        </div> 
+      </div>
+    </div>
+    <div class="col-xs-5 m-1  R"> 
+      <div class="Box"  style="background-color: #C0F2FD ;">
+        <div>
+          <span><i class="fa fa-thermometer-full fa-3x mb-2" aria-hidden="true"></i></span>
+        </div>
+        <div>
+          <span style="color: #253646;">{{tested}}</span>
+        </div>
+        <div>
+          <span class="mb-2" style="color: #253646; "><b>Samples Tested</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-7" style="margin: 0%; text-align: center; padding-top: 2%; padding-right: 1%;">
+    <ul class="nav nav-tabs">
+      <li *ngIf="statewise" class="nav-item">
+        <a class="nav-link active" >Statewise</a>
+      </li>
+      <li *ngIf="!statewise" class="nav-item">
+        <a class="nav-link" (click)=OnStatewiseClick() >Statewise</a>
+      </li>
+      <li *ngIf="daywise" class="nav-item">
+        <a class="nav-link active">Daywise</a>
+      </li>
+      <li *ngIf="!daywise" class="nav-item">
+        <a class="nav-link " (click)=OnDaywiseClick() >Daywise</a>
+      </li>
+      <li *ngIf="visuals" class="nav-item">
+        <a class="nav-link active" >Visuals</a>
+      </li>
+      <li *ngIf="!visuals" class="nav-item">
+        <a class="nav-link " (click)=OnVisualsClick() >Visuals</a>
+      </li>
+    </ul>
+    
+    <table *ngIf="statewise" class="table table-striped mt-3" style="text-align: left;" >
+      <thead class="thead-dark" style="border-radius: 3px;">
+        <tr>
+          <th scope="col">Index</th>
+          <th scope="col" style="text-align: center;">State</th>
+          <th scope="col">Confirmed</th>
+          <th scope="col">Active</th>
+          <th scope="col">Recovered</th>
+          <th scope="col">Deaths</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let state of states; let index = index">
+          <th>{{index+1}}</th>
+          <td style="text-align: center;"><button style="border-style: none;background: none;" (click)=OnStateClick(state.state)>{{state.state}}</button></td>
+          <td>{{state.confirmed}}</td>
+          <td>{{state.active}}</td>
+          <td>{{state.recovered}}</td>
+          <td>{{state.deaths}}</td>
+        </tr> 
+      </tbody>
+    </table>
+
+  <table *ngIf="daywise" class="table table-striped mt-3" style="text-align: left;" >
+    <thead class="thead-dark" style="border-radius: 3px;">
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Date</th>
+        <th scope="col">Confirmed</th>
+        <th scope="col">Recovered</th>
+        <th scope="col">Death</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of timeseries; let index = index">
+        <th scope="row">{{index+1}}</th>
+        <td>{{data.date}} 2020</td>
+        <td>{{data.dailyconfirmed}}</td>
+        <td>{{data.dailyrecovered}}</td>
+        <td>{{data.dailydeceased}}</td>
+        <td>{{data.totalconfirmed}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+<div *ngIf="visuals" style="padding: 5%;">
+    <div class="chart-wrapper">
+      <canvas baseChart 
+          [datasets]="lineChartDataConfirmed" 
+          [labels]="lineChartLabelsConfirmed" 
+          [options]="lineChartOptionsConfirmed"
+          [colors]="lineChartColorsConfirmed" 
+          [legend]="lineChartLegendConfirmed" 
+          [chartType]="lineChartTypeConfirmed" 
+          style="max-height: 60vh;">
+      </canvas>
+    </div>
+  <div class="chart-wrapper">
+    <canvas baseChart 
+      [datasets]="lineChartDataDailyCases" 
+      [labels]="lineChartLabelsDailyCases" 
+      [options]="lineChartOptionsDailyCases"
+      [colors]="lineChartColorsDailyCases" 
+      [legend]="lineChartLegendDailyCases" 
+      [chartType]="lineChartTypeDailyCases" 
+      style="max-height: 60vh;">
+    </canvas>
+  </div>
+  <div class="chart-wrapper">
+    <canvas baseChart 
+      [datasets]="lineChartDataRecovered " 
+      [labels]="lineChartLabelsRecovered" 
+      [options]="lineChartOptionsRecovered"
+      [colors]="lineChartColorsRecovered" 
+      [legend]="lineChartLegendRecovered" 
+      [chartType]="lineChartTypeRecovered" 
+      style="max-height: 60vh;">
+    </canvas>
+  </div>
+  <div class="chart-wrapper">
+    <canvas baseChart 
+      [datasets]="lineChartDataDeceased" 
+      [labels]="lineChartLabelDeceased" 
+      [options]="lineChartOptionDeceased"
+      [colors]="lineChartColorDeceased" 
+      [legend]="lineChartLegendDeceased" 
+      [chartType]="lineChartTypeDeceased" 
+      style="max-height: 60vh;">
+    </canvas>
+  </div>  
+</div>
+</div>
+</div>
+<div *ngIf="ok" class="container-fluid col-lg-12" style="margin-top: 30px; max-width: 100%; text-align: center;">
+  <span><i class="fa fa-exclamation-triangle fa-5x mb-2" aria-hidden="true"></i></span>
+<div> <span style=" font-size: x-large;">{{errorcode}} {{message}}</span> </div>
+</div>
+</div>

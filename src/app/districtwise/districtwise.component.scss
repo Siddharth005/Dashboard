@@ -1,0 +1,30 @@
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+ .col-lg-6{
+     width: 100%;
+ }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .col-lg-6{
+        width: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .col-lg-6{
+        min-width: 100%;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1200px) {
+
+    .col-lg-6{
+        min-width: 50%;
+    }
+}

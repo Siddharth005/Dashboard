@@ -1,0 +1,108 @@
+.Box{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 0;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 1%;
+    border-radius: 5px;
+}
+.fa{
+    margin-top: 12%;
+    margin-bottom: 2%;
+}
+.Box:hover{
+    
+    -webkit-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+    transition: 0.5s ease;
+z-index: 1;}
+
+.col-xs-5{
+    text-align: center;
+    padding-top: 2%;
+
+}
+
+
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    div.Box{
+        width:20vw;
+        height:25vw ;
+        margin: 1px;
+    }
+    .col-xs-5{
+        text-align: center;
+        padding-top: 2%;
+        width: 33%;
+        padding-left: 25%;
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .col-xs-5{
+        text-align: center;
+        padding-top: 2%;
+        width:25%;
+    }
+    .col-lg-5{
+        padding-left: 25%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .col-xs-5{
+        text-align: center;
+        padding-top: 2%;
+        width: 15%;
+        
+    }
+
+    .col-lg-5{
+        padding-left: 60px;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    div.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 65px;    
+      }
+    div.Box {
+        width: 11vw; height:24vh;
+     
+    }
+    
+    div.ht {
+        max-height: 590px;
+        padding-left: 60px;
+    }
+    div.L{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    div.R{
+        margin-left: 25px;
+        margin-right: 0px;
+
+    }
+    div.col-xs-5 {
+        font-size: 20px;
+    
+        text-align: center;
+        padding-top: 10px;
+        width: 40%;
+    
+    }
+}
+
