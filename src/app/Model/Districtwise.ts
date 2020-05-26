@@ -10,7 +10,7 @@ export class Districtwise
   district: string;
   statecode: string;
  
-  /* Constructor for Districtwise Data */
+  /* Constructor for Districtwise Data` */
  Districtwise(Confirmed: number, Recovered: number, Deceased: number , Active: number, Zone: string , Dailyconfirmed: number, District : string , Statecode: string)
  {
    this.confirmed = Confirmed;
