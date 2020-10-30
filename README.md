@@ -1,27 +1,8 @@
-# LazyKid
+Covid19Dashboard
+My first ever individual Angular 9 project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+Covid 19
+The COVID-19 pandemic, also known as the coronavirus pandemic, is an ongoing pandemic of coronavirus disease 2019 (COVID‑19), caused by severe acute respiratory syndrome coronavirus 2 (SARS‑CoV‑2). The outbreak was first identified in Wuhan, China, in December 2019. The World Health Organization declared the outbreak a Public Health Emergency of International Concern on 30 January, and a pandemic on 11 March.The first case of the COVID-19 pandemic in India was reported on 30 January 2020, originating from China. As of 25 May 2020, the Ministry of Health and Family Welfare have confirmed a total of 138,845 cases, 57,721 recoveries (including 1 migration) and 4,021 deaths in the country. Credits Wikipedia.org
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Dashboard
+In order to track and analyze the situation of Covid in India a dashboard is devloped. This dashboard on its first page displays basic information and data of cases in india and dispalys information states wise , day wise and also some basic line chart and bar graphs of day wise situation. in subsequent pages it displays information regarding particular states zones of a district and also information of essential services provided in a district
